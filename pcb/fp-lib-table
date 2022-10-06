@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "curio")(type "KiCad")(uri "${KIPRJMOD}/curio.pretty")(options "")(descr ""))
+  (lib (name "lib")(type "KiCad")(uri "/Users/dotcypress/projects/embedded/curio/pcb")(options "")(descr ""))
+)
