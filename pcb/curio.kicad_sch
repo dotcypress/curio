@@ -6,7 +6,7 @@
 
   (title_block
     (title "Curio")
-    (rev "0x01")
+    (rev "0x02")
   )
 
   (lib_symbols
@@ -1822,7 +1822,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 194f6fdd-ce67-4009-a849-f5702f682f2a)
   )
-  (label "LCD_SDA" (at 105.41 76.2 0) (fields_autoplaced)
+  (label "LCD_SDA" (at 105.41 78.74 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 29771117-6076-4fa8-8a62-88259f88dc05)
   )
@@ -1882,7 +1882,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ad2550e8-a823-4ef9-9d59-4a677879607c)
   )
-  (label "LCD_BLK" (at 105.41 78.74 0) (fields_autoplaced)
+  (label "LCD_BLK" (at 105.41 76.2 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b9ce6d14-e412-44eb-8a88-31c238b4935f)
   )

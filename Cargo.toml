@@ -1,0 +1,29 @@
+[package]
+name = "curio-bsp"
+version = "0.0.1"
+edition = "2021"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+description = "Board support crate for Curio: Glorified Infrared Remote Control."
+categories = ["no-std"]
+documentation = "https://docs.rs/curio"
+repository = "https://github.com/dotcypress/curio"
+authors = ["Vitaly Domnikov <oss@vitaly.codes>"]
+
+[dependencies]
+stm32g0xx-hal = { git = "https://github.com/stm32-rs/stm32g0xx-hal", features = ["rt", "stm32g030"] }
+klaptik = {  git = "https://github.com/dotcypress/klaptik", features = ["st7567"] }
+infrared = {version = "0.14.1", features = ["defmt"] }
+
+[dev_dependencies]
+defmt = "0.3.0"
+defmt-rtt = "0.3.1"
+
+[profile.dev]
+incremental = false
+opt-level = 2
+
+[profile.release]
+incremental = false
+lto = true
+opt-level = "z"
