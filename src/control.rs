@@ -28,8 +28,8 @@ impl Control {
         let mut adc = adc.constrain(rcc);
         adc.set_sample_time(adc::SampleTime::T_80);
         adc.set_precision(adc::Precision::B_12);
-        adc.set_oversampling_ratio(adc::OversamplingRatio::X_16);
-        adc.set_oversampling_shift(20);
+        adc.set_oversampling_shift(24);
+        adc.set_oversampling_ratio(adc::OversamplingRatio::X_8);
         adc.oversampling_enable(true);
 
         let mut vbat = adc::VBat::new();
@@ -70,6 +70,6 @@ impl Control {
         Point::new(
             self.adc.read(&mut self.thumb_x).unwrap_or_default(),
             self.adc.read(&mut self.thumb_y).unwrap_or_default(),
-        ) - Point::new(128, 128)
+        ) - Point::new(63, 63)
     }
 }

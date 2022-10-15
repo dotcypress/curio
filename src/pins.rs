@@ -25,8 +25,8 @@ pub type ButtonA = PA2<Input<Floating>>;
 pub type ButtonB = PA3<Input<Floating>>;
 
 // Thumb
-pub type ThumbX = PA0<DefaultMode>;
-pub type ThumbY = PA1<DefaultMode>;
+pub type ThumbX = PA1<DefaultMode>;
+pub type ThumbY = PA0<DefaultMode>;
 
 // DisplayPower
 pub type DisplayPower = PC15<Output<PushPull>>;
@@ -100,8 +100,8 @@ impl Pins {
             btn_b: port_a.pa3.into(),
 
             // Thumb
-            thumb_x: port_a.pa0,
-            thumb_y: port_a.pa1,
+            thumb_y: port_a.pa0,
+            thumb_x: port_a.pa1,
 
             // Display Power
             lcd_power: port_c.pc15.into(),
