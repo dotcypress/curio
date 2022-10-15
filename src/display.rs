@@ -2,7 +2,7 @@ use crate::*;
 use hal::rcc::Rcc;
 use hal::spi::{self, NoMiso};
 use hal::timer::delay::Delay;
-use klaptik::drivers::st7567::ST7567;
+use klaptik::drivers::st7567::{Command, ST7567};
 use klaptik::{Canvas, Point, Rectangle, Size};
 
 pub type SpiDev = spi::Spi<SPI1, (LcdClk, NoMiso, LcdSda)>;
@@ -39,8 +39,11 @@ impl Display {
         let mut driver = ST7567::new(spi, lcd_cs, lcd_dc, lcd_reset);
         driver.set_offset(Point::new(4, 0));
         driver.reset(delay);
+        driver
+            .link()
+            .command(|tx| tx.write(&[Command::SegmentDirectionRev as _]))
+            .ok();
         driver.on();
-
         Display {
             driver,
             backlight,

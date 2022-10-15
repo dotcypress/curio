@@ -21,10 +21,10 @@ pub use infrared::*;
 pub use ir::*;
 pub use pins::*;
 
-pub type I2cDev = hal::i2c::I2c<I2C1, I2cSda, I2cClk>;
-
 pub const IR_SAMPLE_FREQUENCY: u32 = 20_000;
 pub const IR_CARRIER_FREQUENCY: u32 = 38_000;
+
+pub type I2cDev = hal::i2c::I2c<I2C1, I2cSda, I2cClk>;
 
 pub struct Curio {
     pub control: Control,
@@ -66,8 +66,8 @@ impl Curio {
         tim16.listen();
 
         let mut lcd_backlight = tim16.bind_pin(pins.lcd_backlight);
-        lcd_backlight.set_duty(0);
         lcd_backlight.enable();
+        lcd_backlight.set_duty(0);
 
         let mut delay = tim1.delay(rcc);
         let display = Display::new(
@@ -82,6 +82,7 @@ impl Curio {
             &mut delay,
             rcc,
         );
+
         let tim1 = delay.release();
 
         let ir_carrier_tim = tim1.pwm(IR_CARRIER_FREQUENCY.Hz(), rcc);
