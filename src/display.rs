@@ -58,7 +58,7 @@ impl Display {
 
     pub fn set_brightness(&mut self, brightness: u8) {
         let max_duty = self.backlight.get_max_duty() as u32;
-        let duty = brightness as u32 * max_duty / 256;
+        let duty = brightness.clamp(0, 10) as u32 * max_duty / 10;
         self.backlight.set_duty(duty as u16)
     }
 }
