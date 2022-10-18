@@ -5,6 +5,15 @@ use hal::gpio::SignalEdge;
 use hal::stm32;
 use klaptik::Point;
 
+pub enum Button {
+    A,
+    B,
+    Up,
+    Right,
+    Down,
+    Left,
+}
+
 pub struct Control {
     adc: adc::Adc,
     vbat: adc::VBat,
@@ -57,16 +66,34 @@ impl Control {
         self.adc.read_voltage(&mut self.vbat).unwrap_or_default() * 3
     }
 
-    pub fn buttons(&mut self) -> (bool, bool) {
+    pub fn read_buttons(&mut self) -> Option<Button> {
         self.exti.unpend(Event::GPIO2);
         self.exti.unpend(Event::GPIO3);
-        (
-            self.btn_a.is_low().unwrap_or_default(),
-            self.btn_b.is_low().unwrap_or_default(),
-        )
+        if self.btn_a.is_low().unwrap_or_default() {
+            return Some(Button::A);
+        }
+        if self.btn_b.is_low().unwrap_or_default() {
+            return Some(Button::B);
+        }
+        None
     }
 
-    pub fn thumb(&mut self) -> Point {
+    pub fn read_dpad(&mut self) -> Option<Button> {
+        let p = self.read_thumb();
+        if p.x > 32 {
+            Some(Button::Right)
+        } else if p.x < -32 {
+            Some(Button::Left)
+        } else if p.y > 32 {
+            Some(Button::Up)
+        } else if p.y < -32 {
+            Some(Button::Down)
+        } else {
+            None
+        }
+    }
+
+    pub fn read_thumb(&mut self) -> Point {
         Point::new(
             self.adc.read(&mut self.thumb_x).unwrap_or_default(),
             self.adc.read(&mut self.thumb_y).unwrap_or_default(),

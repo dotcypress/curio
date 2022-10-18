@@ -35,7 +35,7 @@ impl Display {
         power.set_high().unwrap();
         delay.delay_ms(10_u32);
 
-        let spi = spi_dev.spi((lcd_clk, NoMiso, lcd_sda), spi::MODE_0, 4.MHz(), rcc);
+        let spi = spi_dev.spi((lcd_clk, NoMiso, lcd_sda), spi::MODE_0, 8.MHz(), rcc);
         let mut driver = ST7567::new(spi, lcd_cs, lcd_dc, lcd_reset);
         driver.set_offset(Point::new(4, 0));
         driver.reset(delay);
