@@ -92,10 +92,10 @@ impl Control {
         }
     }
 
-    pub fn read_thumb(&mut self) -> (i32, i32) {
+    pub fn read_thumb(&mut self) -> (i8, i8) {
         (
-            self.adc.read(&mut self.thumb_x).unwrap_or(0) as i32 - 63,
-            self.adc.read(&mut self.thumb_y).unwrap_or(0) as i32 - 63,
+            self.adc.read(&mut self.thumb_x).unwrap_or(0) as i8 - 63,
+            self.adc.read(&mut self.thumb_y).unwrap_or(0) as i8 - 63,
         )
     }
 }
