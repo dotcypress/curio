@@ -3,7 +3,6 @@ use hal::analog::adc;
 use hal::exti::Event;
 use hal::gpio::SignalEdge;
 use hal::stm32;
-use klaptik::Point;
 
 pub enum Button {
     A,
@@ -79,24 +78,24 @@ impl Control {
     }
 
     pub fn read_dpad(&mut self) -> Option<Button> {
-        let p = self.read_thumb();
-        if p.x > 32 {
+        let (x, y) = self.read_thumb();
+        if x > 32 {
             Some(Button::Right)
-        } else if p.x < -32 {
+        } else if x < -32 {
             Some(Button::Left)
-        } else if p.y > 32 {
+        } else if y > 32 {
             Some(Button::Up)
-        } else if p.y < -32 {
+        } else if y < -32 {
             Some(Button::Down)
         } else {
             None
         }
     }
 
-    pub fn read_thumb(&mut self) -> Point {
-        Point::new(
-            self.adc.read(&mut self.thumb_x).unwrap_or_default(),
-            self.adc.read(&mut self.thumb_y).unwrap_or_default(),
-        ) - Point::new(63, 63)
+    pub fn read_thumb(&mut self) -> (i32, i32) {
+        (
+            self.adc.read(&mut self.thumb_x).unwrap_or(0) as i32 - 63,
+            self.adc.read(&mut self.thumb_y).unwrap_or(0) as i32 - 63,
+        )
     }
 }
