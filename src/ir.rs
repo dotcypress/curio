@@ -19,7 +19,7 @@ impl IrTransceiver {
         let mut tx_pin = carrier_tim.bind_pin(tx_pin);
         tx_pin.set_duty(tx_pin.get_max_duty() / 2);
 
-        let rx = infrared::receiver::PeriodicPoll::with_input(IR_SAMPLE_FREQUENCY, rx_pin);
+        let rx = infrared::receiver::PeriodicPoll::with_input(20_000, rx_pin);
         let tx = infrared::sender::Sender::new(tx_pin);
 
         Self { sample_tim, tx, rx }
