@@ -2,6 +2,7 @@
 
 use hal::rcc::Rcc;
 use hal::stm32::*;
+use hal::time::Hertz;
 use hal::timer::pwm::PwmPin;
 use hal::timer::Channel1;
 
@@ -21,7 +22,6 @@ pub use infrared::*;
 pub use ir::*;
 pub use pins::*;
 
-pub const IR_SAMPLE_FREQUENCY: u32 = 20_000;
 pub const IR_CARRIER_FREQUENCY: u32 = 38_000;
 
 pub type I2cDev = hal::i2c::I2c<I2C1, I2cSda, I2cClk>;
@@ -46,6 +46,7 @@ impl Curio {
         spi: SPI1,
         i2c_dev: I2C1,
         i2c_config: i2c::Config,
+        ir_sample_freq: Hertz,
         rcc: &mut Rcc,
     ) -> Self {
         let pins = Pins::new(gpioa, gpiob, gpioc, rcc);
@@ -62,7 +63,7 @@ impl Curio {
 
         let i2c = i2c_dev.i2c(pins.i2c_sda, pins.i2c_clk, i2c_config, rcc);
 
-        let mut tim16 = tim16.pwm(IR_SAMPLE_FREQUENCY.Hz(), rcc);
+        let mut tim16 = tim16.pwm(ir_sample_freq, rcc);
         tim16.listen();
 
         let mut lcd_backlight = tim16.bind_pin(pins.lcd_backlight);

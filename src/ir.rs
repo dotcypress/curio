@@ -10,7 +10,7 @@ use infrared::sender::Sender;
 
 pub struct IrTransceiver {
     sample_tim: Pwm<TIM16>,
-    tx: Sender<PwmPin<TIM1, Channel3>, { IR_SAMPLE_FREQUENCY }, 128>,//TODO:
+    tx: Sender<PwmPin<TIM1, Channel3>, 20_000, 64>,
     rx: PeriodicPoll<Nec, IrRx>,
 }
 
