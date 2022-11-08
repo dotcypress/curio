@@ -1,8 +1,8 @@
 #![no_std]
 
+use hal::gpio::SignalEdge;
 use hal::rcc::Rcc;
 use hal::stm32::*;
-use hal::time::Hertz;
 use hal::timer::pwm::PwmPin;
 use hal::timer::Channel1;
 
@@ -22,8 +22,6 @@ pub use infrared::*;
 pub use ir::*;
 pub use pins::*;
 
-pub const IR_CARRIER_FREQUENCY: u32 = 38_000;
-
 pub type I2cDev = hal::i2c::I2c<I2C1, I2cSda, I2cClk>;
 
 pub struct Curio {
@@ -40,30 +38,17 @@ impl Curio {
         gpioa: GPIOA,
         gpiob: GPIOB,
         gpioc: GPIOC,
-        exti: EXTI,
         tim1: TIM1,
         tim16: TIM16,
         spi: SPI1,
         i2c_dev: I2C1,
         i2c_config: i2c::Config,
-        ir_sample_freq: Hertz,
+        exti: &mut EXTI,
         rcc: &mut Rcc,
     ) -> Self {
         let pins = Pins::new(gpioa, gpiob, gpioc, rcc);
 
-        let control = Control::new(
-            pins.btn_a,
-            pins.btn_b,
-            pins.thumb_x,
-            pins.thumb_y,
-            adc,
-            exti,
-            rcc,
-        );
-
-        let i2c = i2c_dev.i2c(pins.i2c_sda, pins.i2c_clk, i2c_config, rcc);
-
-        let mut tim16 = tim16.pwm(ir_sample_freq, rcc);
+        let mut tim16 = tim16.pwm(100.kHz(), rcc);
         tim16.listen();
 
         let mut lcd_backlight = tim16.bind_pin(pins.lcd_backlight);
@@ -84,10 +69,19 @@ impl Curio {
             rcc,
         );
 
+        let i2c = i2c_dev.i2c(pins.i2c_sda, pins.i2c_clk, i2c_config, rcc);
+
         let tim1 = delay.release();
+        let mut exti = exti;
 
         let ir_carrier_tim = tim1.pwm(IR_CARRIER_FREQUENCY.Hz(), rcc);
-        let ir = IrTransceiver::new(tim16, ir_carrier_tim, pins.ir_tx, pins.ir_rx);
+        let rx = pins.ir_rx.listen(SignalEdge::All, &mut exti);
+        let ir = IrTransceiver::new(tim16, ir_carrier_tim, pins.ir_tx, rx);
+
+        exti.wakeup(hal::exti::Event::GPIO2);
+        let btn_a = pins.btn_a.listen(SignalEdge::Falling, &mut exti);
+        let btn_b = pins.btn_b.listen(SignalEdge::Falling, &mut exti);
+        let control = Control::new(btn_a, btn_b, pins.thumb_x, pins.thumb_y, adc, rcc);
 
         Self {
             display,

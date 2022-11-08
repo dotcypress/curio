@@ -1,9 +1,7 @@
 use crate::*;
 use hal::analog::adc;
-use hal::exti::Event;
-use hal::gpio::SignalEdge;
-use hal::stm32;
 
+#[derive(Debug)]
 pub enum Button {
     A,
     B,
@@ -16,7 +14,6 @@ pub enum Button {
 pub struct Control {
     adc: adc::Adc,
     vbat: adc::VBat,
-    exti: stm32::EXTI,
     btn_a: ButtonA,
     btn_b: ButtonB,
     thumb_x: ThumbX,
@@ -30,7 +27,6 @@ impl Control {
         thumb_x: ThumbX,
         thumb_y: ThumbY,
         adc: ADC,
-        exti: stm32::EXTI,
         rcc: &mut Rcc,
     ) -> Self {
         let mut adc = adc.constrain(rcc);
@@ -43,15 +39,8 @@ impl Control {
         let mut vbat = adc::VBat::new();
         vbat.enable(&mut adc);
 
-        let mut exti = exti;
-        exti.wakeup(hal::exti::Event::GPIO2);
-
-        let btn_a = btn_a.listen(SignalEdge::Falling, &mut exti);
-        let btn_b = btn_b.listen(SignalEdge::Falling, &mut exti);
-
         adc.calibrate();
         Self {
-            exti,
             vbat,
             btn_a,
             btn_b,
@@ -66,8 +55,6 @@ impl Control {
     }
 
     pub fn read_buttons(&mut self) -> Option<Button> {
-        self.exti.unpend(Event::GPIO2);
-        self.exti.unpend(Event::GPIO3);
         if self.btn_a.is_low().unwrap_or_default() {
             return Some(Button::A);
         }
