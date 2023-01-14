@@ -9,13 +9,13 @@ pub type SpiDev = spi::Spi<SPI1, (LcdClk, NoMiso, LcdSda)>;
 pub type DisplayDriver = ST7567<SpiDev, LcdReset, LcdCS, LcdDC>;
 pub type Backlight = PwmPin<TIM16, Channel1>;
 
-pub struct Display {
-    driver: DisplayDriver,
+pub struct DisplayController {
+    canvas: DisplayDriver,
     backlight: Backlight,
     power: DisplayPower,
 }
 
-impl Display {
+impl DisplayController {
     pub const SIZE: Size = Size::new(128, 64);
 
     #[allow(clippy::too_many_arguments)]
@@ -36,23 +36,24 @@ impl Display {
         delay.delay_ms(10_u32);
 
         let spi = spi_dev.spi((lcd_clk, NoMiso, lcd_sda), spi::MODE_0, 8.MHz(), rcc);
-        let mut driver = ST7567::new(spi, lcd_cs, lcd_dc, lcd_reset);
-        driver.set_offset(Point::new(4, 0));
-        driver.reset(delay);
-        driver
+        let mut canvas = ST7567::new(spi, lcd_cs, lcd_dc, lcd_reset);
+        canvas.set_offset(Point::new(4, 0));
+        canvas.reset(delay);
+        canvas
             .link()
             .command(|tx| tx.write(&[Command::SegmentDirectionRev as _]))
             .ok();
-        driver.on();
-        Display {
-            driver,
+        canvas.on();
+
+        DisplayController {
+            canvas,
             backlight,
             power,
         }
     }
 
     pub fn power_off(&mut self) {
-        self.driver.off();
+        self.canvas.off();
         self.power.set_low().unwrap();
     }
 
@@ -63,8 +64,8 @@ impl Display {
     }
 }
 
-impl Canvas for Display {
+impl Canvas for DisplayController {
     fn draw(&mut self, bounds: Rectangle, buf: &[u8]) {
-        self.driver.draw(bounds, buf);
+        self.canvas.draw(bounds, buf);
     }
 }

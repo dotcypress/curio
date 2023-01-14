@@ -26,7 +26,7 @@ pub type I2cDev = hal::i2c::I2c<I2C1, I2cSda, I2cClk>;
 
 pub struct Curio {
     pub control: Control,
-    pub display: Display,
+    pub display: DisplayController,
     pub ir: IrTransceiver,
     pub i2c: I2cDev,
 }
@@ -56,7 +56,7 @@ impl Curio {
         lcd_backlight.set_duty(0);
 
         let mut delay = tim1.delay(rcc);
-        let display = Display::new(
+        let display = DisplayController::new(
             spi,
             pins.lcd_reset,
             pins.lcd_cs,

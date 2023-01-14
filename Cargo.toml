@@ -12,7 +12,7 @@ authors = ["Vitaly Domnikov <oss@vitaly.codes>"]
 
 [dependencies]
 stm32g0xx-hal = { git = "https://github.com/stm32-rs/stm32g0xx-hal", features = ["rt", "stm32g030"] }
-klaptik = { version = "0.1.0", features = ["st7567"] }
+klaptik = {  git = "https://github.com/dotcypress/klaptik", features = ["st7567"] }
 infrared = { version = "0.14.1", features = ["defmt"] }
 
 [dev_dependencies]
