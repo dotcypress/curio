@@ -1,4 +1,4 @@
-(kicad_sch (version 20220929) (generator eeschema)
+(kicad_sch (version 20221004) (generator eeschema)
 
   (uuid e63e39d7-6ac0-4ffd-8aa3-1841a4541b55)
 
@@ -33,11 +33,11 @@
         (effects (font (size 1.27 1.27)) hide)
       )
       (symbol "Conn_01x04_Female_1_1"
-        (arc (start 0 -4.572) (mid -0.508 -5.08) (end 0 -5.588)
+        (arc (start 0 -4.572) (mid -0.5058 -5.08) (end 0 -5.588)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (arc (start 0 -2.032) (mid -0.508 -2.54) (end 0 -3.048)
+        (arc (start 0 -2.032) (mid -0.5058 -2.54) (end 0 -3.048)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
@@ -73,11 +73,11 @@
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (arc (start 0 0.508) (mid -0.508 0) (end 0 -0.508)
+        (arc (start 0 0.508) (mid -0.5058 0) (end 0 -0.508)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (arc (start 0 3.048) (mid -0.508 2.54) (end 0 2.032)
+        (arc (start 0 3.048) (mid -0.5058 2.54) (end 0 2.032)
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
@@ -1938,11 +1938,10 @@
   (symbol (lib_id "Device:R") (at 54.61 148.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 01eb9b81-7d20-442d-8c03-19fcde2e1224)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 58.42 147.32 0)
+    (property "Reference" "R8" (at 58.42 147.32 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 58.42 149.86 0)
+    (property "Value" "190R" (at 58.42 149.86 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 52.832 148.59 90)
@@ -1953,13 +1952,19 @@
     )
     (pin "1" (uuid 51d10f31-e09e-4ab7-b2ac-2930336ea8c7))
     (pin "2" (uuid 19201bf8-0a11-4225-a073-38d2fca4e057))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R8") (unit 1) (value "190R") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 200.66 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 03baf214-3f20-4db4-8a42-5a36465aae0b)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 200.66 82.55 0)
+    (property "Reference" "#PWR0127" (at 200.66 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 200.66 81.788 0)
@@ -1972,13 +1977,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f02e9380-c5ee-4ce2-a0ad-b4beadb32858))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0127") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 48.26 168.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 05b68b73-adcf-44dd-bdee-2d77304bad6f)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 48.26 175.26 0)
+    (property "Reference" "#PWR0109" (at 48.26 175.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 48.26 174.498 0)
@@ -1991,16 +2002,22 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 2c493d4e-6e0b-4cf6-bcd2-0e305038ef40))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0109") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:C") (at 33.02 88.9 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 060f0879-dcb7-476e-bbc4-30d0d72230e0)
-    (default_instance (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric"))
-    (property "Reference" "C1" (at 34.29 86.36 0)
+    (property "Reference" "C6" (at 34.29 86.36 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C" (at 34.29 91.44 0)
+    (property "Value" "10uF" (at 34.29 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 33.9852 92.71 0)
@@ -2011,16 +2028,22 @@
     )
     (pin "1" (uuid bc72442d-583d-4ae8-b3a7-2f7749070725))
     (pin "2" (uuid 964dec80-ecf9-48dc-b378-edc04334ff37))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "C6") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 227.33 133.35 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 06394f30-e9c4-4963-bfc7-c61ef39946ef)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 227.33 128.27 90)
+    (property "Reference" "R4" (at 227.33 128.27 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 227.33 130.81 90)
+    (property "Value" "190R" (at 227.33 130.81 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 227.33 131.572 90)
@@ -2031,13 +2054,19 @@
     )
     (pin "1" (uuid 0221e2d9-69b6-4a2c-8f38-3ea1283c10ed))
     (pin "2" (uuid d7e18468-213b-48ce-93d7-07181db97136))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R4") (unit 1) (value "190R") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 143.51 168.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0b23c0a8-525b-40bd-88b4-8ecd1c97bc4c)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 143.51 175.26 0)
+    (property "Reference" "#PWR0102" (at 143.51 175.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 143.51 174.498 0)
@@ -2050,13 +2079,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e65380e1-6eaf-48dd-bee3-e60c446cfb67))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 63.5 50.8 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 146d3a7b-882f-4ab6-b27a-093296552196)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 63.5 57.15 0)
+    (property "Reference" "#PWR0120" (at 63.5 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 63.5 56.388 0)
@@ -2069,16 +2104,22 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 58cd0426-a332-4396-b4fc-af0c20e2337e))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0120") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 176.53 54.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 172a926b-ec0b-42fb-9ae8-b734750de788)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 180.34 53.34 0)
+    (property "Reference" "R9" (at 180.34 53.34 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 180.34 55.88 0)
+    (property "Value" "10K" (at 180.34 55.88 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 174.752 54.61 90)
@@ -2089,16 +2130,22 @@
     )
     (pin "1" (uuid a98da6ad-3391-494b-8d66-69f975887e3e))
     (pin "2" (uuid 97ecb2c8-3eda-4ab4-8330-80d36a1f07d0))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R9") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 124.46 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2301d9c1-b6e6-4a9c-9236-3d2e7d59fdc5)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
     (property "Reference" "R1" (at 128.27 82.55 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 128.27 85.09 0)
+    (property "Value" "10K" (at 128.27 85.09 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 122.682 83.82 90)
@@ -2109,16 +2156,22 @@
     )
     (pin "1" (uuid 0723af15-9b70-4ca1-bedb-f509efe165e5))
     (pin "2" (uuid 12d84c6f-1be7-4d98-b577-56c98e18d198))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R1") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:C") (at 78.74 41.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 24dfb859-fc7b-4112-9e54-efce30965ea2)
-    (default_instance (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric"))
-    (property "Reference" "C1" (at 80.01 39.37 0)
+    (property "Reference" "C2" (at 80.01 39.37 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C" (at 80.01 44.45 0)
+    (property "Value" "100nF" (at 80.01 44.45 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 79.7052 45.72 0)
@@ -2129,13 +2182,19 @@
     )
     (pin "1" (uuid f50e09a8-0399-4272-af21-2df6e76000b8))
     (pin "2" (uuid 9bb2b4b0-6f79-42d7-9392-3661de74c76d))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "C2") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 78.74 50.8 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3b8d89f3-04e3-4c0d-a6a8-77f1c2014431)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 78.74 57.15 0)
+    (property "Reference" "#PWR0105" (at 78.74 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 78.74 56.388 0)
@@ -2148,12 +2207,18 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid c5b15877-ccf8-47b1-891b-e080c38abe65))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Sensor_Proximity:TSSP58038") (at 35.56 157.48 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3c40d843-8b8d-4983-b70b-e580015e117b)
-    (default_instance (reference "U2") (unit 1) (value "TSSP58038") (footprint "OptoDevice:Vishay_MINICAST-3Pin"))
     (property "Reference" "U2" (at 33.825 147.828 0)
       (effects (font (size 1.27 1.27)))
     )
@@ -2169,13 +2234,19 @@
     (pin "1" (uuid 10ecee48-1462-4f5d-85e6-4dacecdb2a06))
     (pin "2" (uuid 5158b667-870e-40c8-beaf-32e62775d684))
     (pin "3" (uuid 32b37ba1-d591-4962-98c9-392e914e8ab8))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "U2") (unit 1) (value "TSSP58038") (footprint "OptoDevice:Vishay_MINICAST-3Pin")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:+BATT") (at 176.53 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4560cc5c-ca24-4c1e-a61f-7140acb65bac)
-    (default_instance (reference "#PWR?") (unit 1) (value "+BATT") (footprint ""))
-    (property "Reference" "#PWR?" (at 176.53 52.07 0)
+    (property "Reference" "#PWR0122" (at 176.53 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 176.53 44.45 0)
@@ -2188,13 +2259,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f424148e-5648-4654-9389-e2300b220166))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0122") (unit 1) (value "+BATT") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:Vdrive") (at 33.02 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 54f668d4-99f0-4f92-9fa1-30ff73a07a51)
-    (default_instance (reference "#PWR?") (unit 1) (value "Vdrive") (footprint ""))
-    (property "Reference" "#PWR?" (at 27.94 69.85 0)
+    (property "Reference" "#PWR0113" (at 27.94 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Vdrive" (at 33.02 62.23 0)
@@ -2207,13 +2284,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 619390f6-1771-4407-89f1-092f0ebde58e))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0113") (unit 1) (value "Vdrive") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 68.58 168.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5512bdad-58d2-4240-94e4-054e541881bf)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 68.58 175.26 0)
+    (property "Reference" "#PWR0108" (at 68.58 175.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 68.58 174.498 0)
@@ -2226,12 +2309,18 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid c17d98bb-ac38-4058-9cbb-9acaec5783bf))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0108") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "curio:STM32G0xxFx") (at 87.63 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5618f6d8-c7d3-4e7d-bc23-0d4708e7d17a)
-    (default_instance (reference "U1") (unit 1) (value "STM32G0xxFx") (footprint "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"))
     (property "Reference" "U1" (at 66.04 93.98 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
@@ -2264,13 +2353,19 @@
     (pin "7" (uuid 2383a8a1-6208-4d16-a1d3-fec06befd6da))
     (pin "8" (uuid 7ea26916-77e2-48a3-8ed0-cbb466a890bc))
     (pin "9" (uuid 78fb52f9-2b89-46c0-9e6e-c4b2e6a32900))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "U1") (unit 1) (value "STM32G0xxFx") (footprint "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 71.12 50.8 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 56af7699-0347-4e97-9ef5-3dbe2cae5039)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 71.12 57.15 0)
+    (property "Reference" "#PWR0119" (at 71.12 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 71.12 56.388 0)
@@ -2283,16 +2378,22 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 4bd03430-18ec-481f-8f7d-fee548ef8e81))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0119") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:C") (at 176.53 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5c7a1623-f136-4854-b9d1-58903dc02c15)
-    (default_instance (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric"))
-    (property "Reference" "C1" (at 177.8 64.77 0)
+    (property "Reference" "C5" (at 177.8 64.77 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C" (at 177.8 69.85 0)
+    (property "Value" "100nF" (at 177.8 69.85 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 177.4952 71.12 0)
@@ -2303,16 +2404,22 @@
     )
     (pin "1" (uuid 65e4ceb8-9656-427c-8b67-d9597bc3a06b))
     (pin "2" (uuid f201a45d-8249-4a07-aea3-1cdbbaa02ccb))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "C5") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 147.32 146.05 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5c868331-636e-4b82-a9ab-dd0ca5ed73a0)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 147.32 140.97 90)
+    (property "Reference" "R2" (at 147.32 140.97 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 147.32 143.51 90)
+    (property "Value" "0R" (at 147.32 143.51 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 147.32 144.272 90)
@@ -2323,13 +2430,19 @@
     )
     (pin "1" (uuid 4f2aa25a-4754-46a5-804c-a298de59b794))
     (pin "2" (uuid 36126062-4625-4efd-a507-44d4ccea096b))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R2") (unit 1) (value "0R") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:+BATT") (at 87.63 33.02 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5f3b3d82-50fd-48a5-bf45-9286f1c80116)
-    (default_instance (reference "#PWR?") (unit 1) (value "+BATT") (footprint ""))
-    (property "Reference" "#PWR?" (at 87.63 36.83 0)
+    (property "Reference" "#PWR0115" (at 87.63 36.83 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 87.63 29.21 0)
@@ -2342,13 +2455,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid d20e4c22-5a9b-483b-8ec4-fd5e8dc667ac))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0115") (unit 1) (value "+BATT") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 130.81 168.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5ff3085b-b544-4143-b091-9a43e6fe794e)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 130.81 175.26 0)
+    (property "Reference" "#PWR0103" (at 130.81 175.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 130.81 174.498 0)
@@ -2361,13 +2480,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 3c3c79a0-3394-4d95-9a62-b091f9d2aa04))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0103") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:Vdrive") (at 130.81 138.43 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 616db77c-8617-4751-82ea-867841cd657c)
-    (default_instance (reference "#PWR?") (unit 1) (value "Vdrive") (footprint ""))
-    (property "Reference" "#PWR?" (at 125.73 142.24 0)
+    (property "Reference" "#PWR0106" (at 125.73 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Vdrive" (at 130.81 134.62 0)
@@ -2380,19 +2505,25 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 00b22d5d-9177-48e7-85b1-49309e3e2849))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0106") (unit 1) (value "Vdrive") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Switch:SW_Push") (at 170.18 68.58 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 622796bf-3e7a-4609-989f-d49daff3a9dc)
-    (default_instance (reference "SW1") (unit 1) (value "SW_Push") (footprint "Resistor_SMD:R_1206_3216Metric"))
-    (property "Reference" "SW1" (at 165.1 67.31 90)
+    (property "Reference" "SW2" (at 165.1 67.31 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 165.1 69.85 90)
+    (property "Value" "BTN_A" (at 165.1 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 165.1 68.58 0)
+    (property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin" (at 165.1 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 165.1 68.58 0)
@@ -2400,13 +2531,19 @@
     )
     (pin "1" (uuid 46ac2ff9-9688-4311-9978-848e6d0a8e2e))
     (pin "2" (uuid 3ef47480-32bc-4c23-8076-81f6cf5ff4a6))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "SW2") (unit 1) (value "BTN_A") (footprint "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 245.11 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 628e9c4b-993a-48e0-ad36-6baf739084e6)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 245.11 82.55 0)
+    (property "Reference" "#PWR0124" (at 245.11 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 245.11 81.788 0)
@@ -2419,13 +2556,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 510223ce-b833-4d87-ad75-cb32467a507b))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0124") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 170.18 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6a7527e0-1734-4777-aeaf-43acbec2f381)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 170.18 82.55 0)
+    (property "Reference" "#PWR0126" (at 170.18 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 170.18 81.788 0)
@@ -2438,13 +2581,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 2004cb49-6e30-46d3-bc1c-887afdcbcd42))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0126") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 176.53 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6c18a5b4-c412-4ffd-b2e8-4637d229dd84)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 176.53 82.55 0)
+    (property "Reference" "#PWR0125" (at 176.53 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 176.53 81.788 0)
@@ -2457,13 +2606,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 47978874-ca65-4a08-873d-e48e173c3f5c))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0125") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 33.02 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6d444b28-8960-41fa-812a-59d4059c5871)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 33.02 104.14 0)
+    (property "Reference" "#PWR0110" (at 33.02 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 33.02 103.378 0)
@@ -2476,13 +2631,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 0cf32ad2-f92e-4e85-aff3-955a57a587a5))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0110") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 55.88 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 78cd3183-138e-4651-86d7-6cb265029ba3)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 55.88 104.14 0)
+    (property "Reference" "#PWR0112" (at 55.88 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 55.88 103.378 0)
@@ -2495,13 +2656,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 55343c56-d401-4d06-bd71-0c3ba53f35f3))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0112") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 76.2 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 79835335-c4a4-4a76-b8d7-96fb040acd22)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 76.2 104.14 0)
+    (property "Reference" "#PWR0114" (at 76.2 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 76.2 103.378 0)
@@ -2514,16 +2681,22 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 2d1efaa1-54a3-462a-b8e9-b19dc90f077b))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0114") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:C") (at 44.45 88.9 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 82f9da07-ba71-4a61-a811-7f09ce9fc852)
-    (default_instance (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric"))
-    (property "Reference" "C1" (at 45.72 86.36 0)
+    (property "Reference" "C3" (at 45.72 86.36 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C" (at 45.72 91.44 0)
+    (property "Value" "100nF" (at 45.72 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 45.4152 92.71 0)
@@ -2534,16 +2707,22 @@
     )
     (pin "1" (uuid 07472016-c220-4fe4-ada1-51d5a4dc1673))
     (pin "2" (uuid 0fe128d2-e5b8-401a-bb15-a23a06cd66ac))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "C3") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 68.58 148.59 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 855ad8cd-68b5-4f26-acdd-e126c137dbac)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 72.39 147.32 0)
+    (property "Reference" "R7" (at 72.39 147.32 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 72.39 149.86 0)
+    (property "Value" "1K" (at 72.39 149.86 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 70.358 148.59 90)
@@ -2554,16 +2733,22 @@
     )
     (pin "1" (uuid ceeb0551-65dc-4a92-b6af-69b5f7ed4d0c))
     (pin "2" (uuid 57e9da6f-746d-4df7-b837-6df74fe2deb3))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R7") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:C") (at 71.12 41.91 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9064be51-d1a0-43b5-b1bb-74ab3c7a3276)
-    (default_instance (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric"))
     (property "Reference" "C1" (at 72.39 39.37 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C" (at 72.39 44.45 0)
+    (property "Value" "10uF" (at 72.39 44.45 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 72.0852 45.72 0)
@@ -2574,13 +2759,19 @@
     )
     (pin "1" (uuid 4a299a6b-5b93-4c91-b6d8-37981f47fda0))
     (pin "2" (uuid a64ff72a-a6bb-43fd-bbbc-ebbacb373c5e))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "C1") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:PWR_FLAG") (at 34.29 68.58 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9317adb6-6222-4f59-9d73-45de219dc183)
-    (default_instance (reference "#FLG?") (unit 1) (value "PWR_FLAG") (footprint ""))
-    (property "Reference" "#FLG?" (at 36.195 68.58 0)
+    (property "Reference" "#FLG0102" (at 36.195 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "PWR_FLAG" (at 36.83 68.58 90)
@@ -2593,13 +2784,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid fa9ffc87-ced1-4960-9f6a-ee92a95c8cc1))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#FLG0102") (unit 1) (value "PWR_FLAG") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 194.31 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 934eeb51-9c60-46ef-811c-110ac5e39d3e)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 194.31 82.55 0)
+    (property "Reference" "#PWR0101" (at 194.31 82.55 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 194.31 81.788 0)
@@ -2612,16 +2809,22 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 55abfe49-7a2c-4c75-9a4f-5548cb5dc390))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:C") (at 200.66 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9a4d1f6c-8407-4cb1-bcec-45d74e430ed1)
-    (default_instance (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric"))
-    (property "Reference" "C1" (at 203.2 64.77 0)
+    (property "Reference" "C4" (at 203.2 64.77 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "C" (at 201.93 69.85 0)
+    (property "Value" "100nF" (at 201.93 69.85 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 201.6252 71.12 0)
@@ -2632,13 +2835,19 @@
     )
     (pin "1" (uuid 2103748e-b868-4490-9616-291d833e85ce))
     (pin "2" (uuid 83ca47ee-1914-4d12-b5e8-2903c5ab7e41))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "C4") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:+BATT") (at 254 128.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9c418119-e925-44ad-8e87-fb19126e480c)
-    (default_instance (reference "#PWR?") (unit 1) (value "+BATT") (footprint ""))
-    (property "Reference" "#PWR?" (at 254 132.08 0)
+    (property "Reference" "#PWR0117" (at 254 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 254 124.46 0)
@@ -2651,13 +2860,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 11c299d4-e8bd-4d64-b337-0f152d972492))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0117") (unit 1) (value "+BATT") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:+BATT") (at 120.65 77.47 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9d70bc4a-32c1-4fb7-8acf-1438137a6e07)
-    (default_instance (reference "#PWR?") (unit 1) (value "+BATT") (footprint ""))
-    (property "Reference" "#PWR?" (at 120.65 81.28 0)
+    (property "Reference" "#PWR0116" (at 120.65 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 120.65 73.66 0)
@@ -2670,13 +2885,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 627b1546-dfd7-4630-86eb-4ea9be886135))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0116") (unit 1) (value "+BATT") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:PWR_FLAG") (at 59.69 35.56 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9f1c602f-f521-4f8a-ac36-ab95e5af1bad)
-    (default_instance (reference "#FLG?") (unit 1) (value "PWR_FLAG") (footprint ""))
-    (property "Reference" "#FLG?" (at 57.785 35.56 0)
+    (property "Reference" "#FLG0103" (at 57.785 35.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "PWR_FLAG" (at 55.88 35.56 90)
@@ -2689,13 +2910,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a07beeae-4e59-4dc4-bf39-c5c03e6ed33f))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#FLG0103") (unit 1) (value "PWR_FLAG") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 219.71 148.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ab18d077-1db6-45b7-9e27-95ef0c5d57d2)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 219.71 154.94 0)
+    (property "Reference" "#PWR0118" (at 219.71 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 219.71 154.178 0)
@@ -2708,19 +2935,25 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 408cc121-3968-4f45-9585-609779897e6e))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0118") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Switch:SW_Push") (at 194.31 68.58 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ad7fc87d-e850-4b4d-aeac-ee2a6fcaf892)
-    (default_instance (reference "SW1") (unit 1) (value "SW_Push") (footprint "Resistor_SMD:R_1206_3216Metric"))
-    (property "Reference" "SW1" (at 189.23 67.31 90)
+    (property "Reference" "SW3" (at 189.23 67.31 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 189.23 69.85 90)
+    (property "Value" "BTN_B" (at 189.23 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 189.23 68.58 0)
+    (property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin" (at 189.23 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 189.23 68.58 0)
@@ -2728,19 +2961,25 @@
     )
     (pin "1" (uuid ca7b2a5f-0b0f-4e97-b315-4bc1fc5bfd2b))
     (pin "2" (uuid 037d3096-0171-4819-8475-8304ccf60e00))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "SW3") (unit 1) (value "BTN_B") (footprint "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Switch:SW_Push") (at 55.88 90.17 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b1ebaa58-8c31-4046-bd31-95f3835a46df)
-    (default_instance (reference "SW1") (unit 1) (value "SW_Push") (footprint "Resistor_SMD:R_1206_3216Metric"))
     (property "Reference" "SW1" (at 57.15 88.9 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "SW_Push" (at 57.15 91.44 90)
+    (property "Value" "Reset" (at 57.15 91.44 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 50.8 90.17 0)
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" (at 50.8 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 50.8 90.17 0)
@@ -2748,16 +2987,22 @@
     )
     (pin "1" (uuid 84127027-871d-4718-9063-a210289d85d8))
     (pin "2" (uuid 4f2ff461-66f6-46d2-8884-1cc97f425d89))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "SW1") (unit 1) (value "Reset") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 246.38 135.89 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b2af5974-4851-48fa-9407-fe4736a43cb2)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 246.38 140.97 90)
+    (property "Reference" "R5" (at 246.38 140.97 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 246.38 138.43 90)
+    (property "Value" "4K7" (at 246.38 138.43 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 246.38 134.112 90)
@@ -2768,19 +3013,25 @@
     )
     (pin "1" (uuid d64ca344-55c3-45e6-968e-7b2057ef6daa))
     (pin "2" (uuid ebede928-6203-4774-8d78-6abc9cad8ea3))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R5") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R_Potentiometer_Dual_Separate") (at 252.73 62.23 0) (mirror x) (unit 2)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b3d71754-ec4f-4b44-bc8b-a8921cd2857d)
-    (default_instance (reference "RV1") (unit 2) (value "R_Potentiometer_Dual_Separate") (footprint ""))
     (property "Reference" "RV1" (at 248.92 62.23 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R_Potentiometer_Dual_Separate" (at 245.11 55.88 0)
+    (property "Value" "Thumbstick" (at 245.11 55.88 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 252.73 62.23 0)
+    (property "Footprint" "curio:Thumbstick" (at 252.73 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 252.73 62.23 0)
@@ -2792,13 +3043,19 @@
     (pin "4" (uuid c6939426-57f1-4081-b31d-9c7a804503c6))
     (pin "5" (uuid 0c7cb54d-efae-4854-8a95-57c3f96af022))
     (pin "6" (uuid ea390416-9688-4bba-9d30-26b28c58ffe7))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "RV1") (unit 2) (value "Thumbstick") (footprint "curio:Thumbstick")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:Vdrive") (at 245.11 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b5b38757-2319-42ee-9920-60e5d1a3d6bb)
-    (default_instance (reference "#PWR?") (unit 1) (value "Vdrive") (footprint ""))
-    (property "Reference" "#PWR?" (at 240.03 52.07 0)
+    (property "Reference" "#PWR0123" (at 240.03 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Vdrive" (at 245.11 44.45 0)
@@ -2811,16 +3068,22 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 663f2673-bfa4-4703-a99a-aa3efa64634d))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0123") (unit 1) (value "Vdrive") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 200.66 54.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cb77d440-7e32-4a0e-9121-924b62423992)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 204.47 53.34 0)
+    (property "Reference" "R10" (at 204.47 53.34 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 204.47 55.88 0)
+    (property "Value" "10K" (at 204.47 55.88 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 198.882 54.61 90)
@@ -2831,16 +3094,22 @@
     )
     (pin "1" (uuid b2034405-f758-4900-8238-3ee9a83ecb6f))
     (pin "2" (uuid 90c9348f-0865-4bb9-8056-45516995aaee))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R10") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 246.38 133.35 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cb8f3ad9-7a2f-42b2-b19e-6fa9cb9faec6)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 246.38 128.27 90)
+    (property "Reference" "R6" (at 246.38 128.27 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 246.38 130.81 90)
+    (property "Value" "4K7" (at 246.38 130.81 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 246.38 131.572 90)
@@ -2851,12 +3120,18 @@
     )
     (pin "1" (uuid 8613c092-959e-4e17-adc1-b98cb59f15ae))
     (pin "2" (uuid 26047627-ce42-4010-ab10-4a56d8095383))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R6") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:FerriteBead") (at 41.91 76.2 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cfdd4ebe-5ec8-4cde-a199-1ba577f7b0f8)
-    (default_instance (reference "FB1") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0603_1608Metric"))
     (property "Reference" "FB1" (at 40.64 73.66 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
@@ -2871,16 +3146,22 @@
     )
     (pin "1" (uuid 7f6fc68a-6955-4673-b0cc-b91afd8f96ad))
     (pin "2" (uuid 7fc64d80-2882-49fb-8b6e-a53486486c50))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "FB1") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R") (at 227.33 135.89 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e1dcaf5e-832e-4680-9fd9-4bf27d81341d)
-    (default_instance (reference "R1") (unit 1) (value "R") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "R1" (at 227.33 140.97 90)
+    (property "Reference" "R3" (at 227.33 140.97 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "R" (at 227.33 138.43 90)
+    (property "Value" "190R" (at 227.33 138.43 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 227.33 134.112 90)
@@ -2891,13 +3172,19 @@
     )
     (pin "1" (uuid bbb5b26a-0125-4f89-9438-766e7fe9b6f8))
     (pin "2" (uuid 6fbde616-5e89-404f-889e-2878f594279e))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "R3") (unit 1) (value "190R") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 120.65 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e1ea6245-88e1-48da-b8cd-0567a3a90f20)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 120.65 104.14 0)
+    (property "Reference" "#PWR0104" (at 120.65 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 120.65 103.378 0)
@@ -2910,13 +3197,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 64fdda97-2f46-4aea-a33a-2cd21bdb4ab6))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0104") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:Vdrive") (at 48.26 144.78 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e2a1e21f-f0e6-4369-9cf9-0879287fd6e5)
-    (default_instance (reference "#PWR?") (unit 1) (value "Vdrive") (footprint ""))
-    (property "Reference" "#PWR?" (at 43.18 148.59 0)
+    (property "Reference" "#PWR0107" (at 43.18 148.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Vdrive" (at 48.26 140.97 0)
@@ -2929,12 +3222,18 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f98df190-025d-4307-bcda-095c40cf38ce))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0107") (unit 1) (value "Vdrive") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "LED:IRL81A") (at 68.58 157.48 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e4fa5533-9b47-4d6e-988e-9afd3e5765ac)
-    (default_instance (reference "D1") (unit 1) (value "IRL81A") (footprint "LED_THT:LED_SideEmitter_Rectangular_W4.5mm_H1.6mm"))
     (property "Reference" "D1" (at 72.39 157.48 90)
       (effects (font (size 1.27 1.27)))
     )
@@ -2949,12 +3248,18 @@
     )
     (pin "1" (uuid 30b6b869-71af-45b7-bd69-ae7c398f5878))
     (pin "2" (uuid df51f407-91ef-446c-b505-4259cc3e14dd))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "D1") (unit 1) (value "IRL81A") (footprint "LED_THT:LED_SideEmitter_Rectangular_W4.5mm_H1.6mm")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "curio:LCD12864") (at 130.81 153.67 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e66be6ae-2c77-417f-8fca-998626ca19ce)
-    (default_instance (reference "U3") (unit 1) (value "LCD12864") (footprint "curio:LCD_FPC_1x14_P0.80mm"))
     (property "Reference" "U3" (at 124.46 140.97 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
@@ -2981,13 +3286,19 @@
     (pin "7" (uuid 7c1d463d-7074-4637-b57d-451f64f906cf))
     (pin "8" (uuid 0d22e524-dc9e-4bff-85dd-5cb6a367da9a))
     (pin "9" (uuid 14e31018-c4eb-43f0-b3a0-140c9f60dbfa))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "U3") (unit 1) (value "LCD12864") (footprint "curio:LCD_FPC_1x14_P0.80mm")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:GND") (at 44.45 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eaa00979-c485-4c75-b83b-ae8c46db85a7)
-    (default_instance (reference "#PWR?") (unit 1) (value "GND") (footprint ""))
-    (property "Reference" "#PWR?" (at 44.45 104.14 0)
+    (property "Reference" "#PWR0111" (at 44.45 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 44.45 103.378 0)
@@ -3000,13 +3311,19 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f4773a07-827d-46da-952c-005c7c378029))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0111") (unit 1) (value "GND") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "power:+BATT") (at 200.66 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eac739c5-1473-498c-82b2-8249557a6fa7)
-    (default_instance (reference "#PWR?") (unit 1) (value "+BATT") (footprint ""))
-    (property "Reference" "#PWR?" (at 200.66 52.07 0)
+    (property "Reference" "#PWR0121" (at 200.66 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 200.66 44.45 0)
@@ -3019,19 +3336,25 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 92359485-b233-44a0-a421-0b6e9b9486a5))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "#PWR0121") (unit 1) (value "+BATT") (footprint "")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:Battery_Cell") (at 63.5 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ebc93ef5-6f30-423c-abfb-72eb1d63370a)
-    (default_instance (reference "BT1") (unit 1) (value "Battery_Cell") (footprint ""))
     (property "Reference" "BT1" (at 57.15 40.64 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "Battery_Cell" (at 53.34 43.18 0)
+    (property "Value" "CR2030" (at 53.34 43.18 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 63.5 41.656 90)
+    (property "Footprint" "curio:BatteryHolder-Lynx-BAT-HLD-001" (at 63.5 41.656 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 63.5 41.656 90)
@@ -3039,13 +3362,19 @@
     )
     (pin "1" (uuid 0fb69f41-cb3f-48eb-b200-c120a1fd942a))
     (pin "2" (uuid f2632360-4bf7-494d-ad82-84d5ebbedb19))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "BT1") (unit 1) (value "CR2030") (footprint "curio:BatteryHolder-Lynx-BAT-HLD-001")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:FerriteBead") (at 236.22 144.78 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f02d4a87-1096-489d-a516-59f8dc4850ef)
-    (default_instance (reference "FB1") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0603_1608Metric"))
-    (property "Reference" "FB1" (at 238.76 147.32 90)
+    (property "Reference" "FB2" (at 238.76 147.32 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "FerriteBead" (at 234.95 149.86 90)
@@ -3059,12 +3388,18 @@
     )
     (pin "1" (uuid d4145144-3f98-4689-965d-ce4693bbd3d0))
     (pin "2" (uuid 57dc4ffa-af7e-4a8d-8192-5647372766bd))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "FB2") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0603_1608Metric")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Connector_Generic:Conn_02x03_Odd_Even") (at 113.03 88.9 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f8ec57ee-0d04-47ce-911a-f61c7b063016)
-    (default_instance (reference "J1") (unit 1) (value "TagConnect") (footprint "lib:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"))
     (property "Reference" "J1" (at 111.76 93.98 0)
       (effects (font (size 1.27 1.27)))
     )
@@ -3083,16 +3418,22 @@
     (pin "4" (uuid f16042d8-830f-4e71-90c1-717843c2b7ee))
     (pin "5" (uuid db79ffec-1d49-43ba-961a-110ba341227d))
     (pin "6" (uuid 446486dc-8b76-48c7-95e3-beaacb80e7a5))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "J1") (unit 1) (value "TagConnect") (footprint "lib:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Connector:Conn_01x04_Female") (at 213.36 138.43 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid faeac2bb-6aa9-4937-a905-a4545bb39368)
-    (default_instance (reference "J2") (unit 1) (value "QUICK") (footprint "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"))
     (property "Reference" "J2" (at 209.55 135.89 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "QUICK" (at 209.55 138.43 0)
+    (property "Value" "Qwiic" (at 209.55 138.43 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" (at 213.36 138.43 0)
@@ -3105,12 +3446,18 @@
     (pin "2" (uuid 6be021bb-faf8-4b18-aafd-c8dc4535d9b3))
     (pin "3" (uuid 892e383d-f569-4718-99c6-56f863c93df6))
     (pin "4" (uuid 8ec188d3-037a-4471-9555-ded4ef9cb02c))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "J2") (unit 1) (value "Qwiic") (footprint "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal")
+        )
+      )
+    )
   )
 
   (symbol (lib_id "Device:R_Potentiometer_Dual_Separate") (at 237.49 62.23 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fcde21c3-dde9-462a-84ad-c9b7fdd2f4b6)
-    (default_instance (reference "RV1") (unit 1) (value "Thumbstick") (footprint "curio:Thumbstick"))
     (property "Reference" "RV1" (at 238.76 62.23 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
@@ -3129,189 +3476,16 @@
     (pin "4" (uuid 3406382f-8df7-4955-bc3f-c9943871fb6d))
     (pin "5" (uuid ff45c880-b675-4394-8f8b-42795ab901c8))
     (pin "6" (uuid 99008a9b-c285-4214-9b91-7128fe603ed7))
+    (instances
+      (project "curio"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+          (reference "RV1") (unit 1) (value "Thumbstick") (footprint "curio:Thumbstick")
+        )
+      )
+    )
   )
 
   (sheet_instances
-    (path "/" (page "1"))
-  )
-
-  (symbol_instances
-    (path "/9317adb6-6222-4f59-9d73-45de219dc183"
-      (reference "#FLG0102") (unit 1) (value "PWR_FLAG") (footprint "")
-    )
-    (path "/9f1c602f-f521-4f8a-ac36-ab95e5af1bad"
-      (reference "#FLG0103") (unit 1) (value "PWR_FLAG") (footprint "")
-    )
-    (path "/934eeb51-9c60-46ef-811c-110ac5e39d3e"
-      (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/0b23c0a8-525b-40bd-88b4-8ecd1c97bc4c"
-      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/5ff3085b-b544-4143-b091-9a43e6fe794e"
-      (reference "#PWR0103") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/e1ea6245-88e1-48da-b8cd-0567a3a90f20"
-      (reference "#PWR0104") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/3b8d89f3-04e3-4c0d-a6a8-77f1c2014431"
-      (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/616db77c-8617-4751-82ea-867841cd657c"
-      (reference "#PWR0106") (unit 1) (value "Vdrive") (footprint "")
-    )
-    (path "/e2a1e21f-f0e6-4369-9cf9-0879287fd6e5"
-      (reference "#PWR0107") (unit 1) (value "Vdrive") (footprint "")
-    )
-    (path "/5512bdad-58d2-4240-94e4-054e541881bf"
-      (reference "#PWR0108") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/05b68b73-adcf-44dd-bdee-2d77304bad6f"
-      (reference "#PWR0109") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/6d444b28-8960-41fa-812a-59d4059c5871"
-      (reference "#PWR0110") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/eaa00979-c485-4c75-b83b-ae8c46db85a7"
-      (reference "#PWR0111") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/78cd3183-138e-4651-86d7-6cb265029ba3"
-      (reference "#PWR0112") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/54f668d4-99f0-4f92-9fa1-30ff73a07a51"
-      (reference "#PWR0113") (unit 1) (value "Vdrive") (footprint "")
-    )
-    (path "/79835335-c4a4-4a76-b8d7-96fb040acd22"
-      (reference "#PWR0114") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/5f3b3d82-50fd-48a5-bf45-9286f1c80116"
-      (reference "#PWR0115") (unit 1) (value "+BATT") (footprint "")
-    )
-    (path "/9d70bc4a-32c1-4fb7-8acf-1438137a6e07"
-      (reference "#PWR0116") (unit 1) (value "+BATT") (footprint "")
-    )
-    (path "/9c418119-e925-44ad-8e87-fb19126e480c"
-      (reference "#PWR0117") (unit 1) (value "+BATT") (footprint "")
-    )
-    (path "/ab18d077-1db6-45b7-9e27-95ef0c5d57d2"
-      (reference "#PWR0118") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/56af7699-0347-4e97-9ef5-3dbe2cae5039"
-      (reference "#PWR0119") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/146d3a7b-882f-4ab6-b27a-093296552196"
-      (reference "#PWR0120") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/eac739c5-1473-498c-82b2-8249557a6fa7"
-      (reference "#PWR0121") (unit 1) (value "+BATT") (footprint "")
-    )
-    (path "/4560cc5c-ca24-4c1e-a61f-7140acb65bac"
-      (reference "#PWR0122") (unit 1) (value "+BATT") (footprint "")
-    )
-    (path "/b5b38757-2319-42ee-9920-60e5d1a3d6bb"
-      (reference "#PWR0123") (unit 1) (value "Vdrive") (footprint "")
-    )
-    (path "/628e9c4b-993a-48e0-ad36-6baf739084e6"
-      (reference "#PWR0124") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/6c18a5b4-c412-4ffd-b2e8-4637d229dd84"
-      (reference "#PWR0125") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/6a7527e0-1734-4777-aeaf-43acbec2f381"
-      (reference "#PWR0126") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/03baf214-3f20-4db4-8a42-5a36465aae0b"
-      (reference "#PWR0127") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/ebc93ef5-6f30-423c-abfb-72eb1d63370a"
-      (reference "BT1") (unit 1) (value "CR2030") (footprint "curio:BatteryHolder-Lynx-BAT-HLD-001")
-    )
-    (path "/9064be51-d1a0-43b5-b1bb-74ab3c7a3276"
-      (reference "C1") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (path "/24dfb859-fc7b-4112-9e54-efce30965ea2"
-      (reference "C2") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (path "/82f9da07-ba71-4a61-a811-7f09ce9fc852"
-      (reference "C3") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (path "/9a4d1f6c-8407-4cb1-bcec-45d74e430ed1"
-      (reference "C4") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (path "/5c7a1623-f136-4854-b9d1-58903dc02c15"
-      (reference "C5") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (path "/060f0879-dcb7-476e-bbc4-30d0d72230e0"
-      (reference "C6") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (path "/e4fa5533-9b47-4d6e-988e-9afd3e5765ac"
-      (reference "D1") (unit 1) (value "IRL81A") (footprint "LED_THT:LED_SideEmitter_Rectangular_W4.5mm_H1.6mm")
-    )
-    (path "/cfdd4ebe-5ec8-4cde-a199-1ba577f7b0f8"
-      (reference "FB1") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/f02d4a87-1096-489d-a516-59f8dc4850ef"
-      (reference "FB2") (unit 1) (value "FerriteBead") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/f8ec57ee-0d04-47ce-911a-f61c7b063016"
-      (reference "J1") (unit 1) (value "TagConnect") (footprint "lib:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical")
-    )
-    (path "/faeac2bb-6aa9-4937-a905-a4545bb39368"
-      (reference "J2") (unit 1) (value "Qwiic") (footprint "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal")
-    )
-    (path "/2301d9c1-b6e6-4a9c-9236-3d2e7d59fdc5"
-      (reference "R1") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/5c868331-636e-4b82-a9ab-dd0ca5ed73a0"
-      (reference "R2") (unit 1) (value "0R") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/e1dcaf5e-832e-4680-9fd9-4bf27d81341d"
-      (reference "R3") (unit 1) (value "190R") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/06394f30-e9c4-4963-bfc7-c61ef39946ef"
-      (reference "R4") (unit 1) (value "190R") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/b2af5974-4851-48fa-9407-fe4736a43cb2"
-      (reference "R5") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/cb8f3ad9-7a2f-42b2-b19e-6fa9cb9faec6"
-      (reference "R6") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/855ad8cd-68b5-4f26-acdd-e126c137dbac"
-      (reference "R7") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/01eb9b81-7d20-442d-8c03-19fcde2e1224"
-      (reference "R8") (unit 1) (value "190R") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/172a926b-ec0b-42fb-9ae8-b734750de788"
-      (reference "R9") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/cb77d440-7e32-4a0e-9121-924b62423992"
-      (reference "R10") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (path "/fcde21c3-dde9-462a-84ad-c9b7fdd2f4b6"
-      (reference "RV1") (unit 1) (value "Thumbstick") (footprint "curio:Thumbstick")
-    )
-    (path "/b3d71754-ec4f-4b44-bc8b-a8921cd2857d"
-      (reference "RV1") (unit 2) (value "Thumbstick") (footprint "curio:Thumbstick")
-    )
-    (path "/b1ebaa58-8c31-4046-bd31-95f3835a46df"
-      (reference "SW1") (unit 1) (value "Reset") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
-    )
-    (path "/622796bf-3e7a-4609-989f-d49daff3a9dc"
-      (reference "SW2") (unit 1) (value "BTN_A") (footprint "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin")
-    )
-    (path "/ad7fc87d-e850-4b4d-aeac-ee2a6fcaf892"
-      (reference "SW3") (unit 1) (value "BTN_B") (footprint "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin")
-    )
-    (path "/5618f6d8-c7d3-4e7d-bc23-0d4708e7d17a"
-      (reference "U1") (unit 1) (value "STM32G0xxFx") (footprint "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm")
-    )
-    (path "/3c40d843-8b8d-4983-b70b-e580015e117b"
-      (reference "U2") (unit 1) (value "TSSP58038") (footprint "OptoDevice:Vishay_MINICAST-3Pin")
-    )
-    (path "/e66be6ae-2c77-417f-8fca-998626ca19ce"
-      (reference "U3") (unit 1) (value "LCD12864") (footprint "curio:LCD_FPC_1x14_P0.80mm")
-    )
+    (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55" (page "1"))
   )
 )
