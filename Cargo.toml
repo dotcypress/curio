@@ -11,8 +11,8 @@ repository = "https://github.com/dotcypress/curio"
 authors = ["Vitaly Domnikov <oss@vitaly.codes>"]
 
 [dependencies]
-stm32g0xx-hal = { version="0.2.0", features = ["rt", "stm32g030"] }
-klaptik = { git = "https://github.com/dotcypress/klaptik", features = ["st7567"] }
+stm32g0xx-hal = { version = "0.2.0", features = ["rt", "stm32g030"] }
+klaptik = { version = "0.2.0", features = ["st7567"] }
 infrared = { version = "0.14.1", features = ["defmt"] }
 
 [profile.dev]
